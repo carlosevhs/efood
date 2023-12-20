@@ -14,7 +14,7 @@ const opcpesDeRestautantes: Restaurant[] = [
     image: sushi,
     nota: '4.9',
     infos: ['Destaque da semana', 'Japonesa'],
-    link: './perfil',
+    link: '',
     titulo: 'Hioki Sushi'
   },
   {
@@ -32,7 +32,7 @@ const opcpesDeRestautantes: Restaurant[] = [
     descricao:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     image: italiana,
-    nota: '4.6',
+    nota: '4.9',
     infos: ['Italiana'],
     link: './perfil',
     titulo: 'La Dolce Vita Trattoria'
@@ -40,29 +40,29 @@ const opcpesDeRestautantes: Restaurant[] = [
   {
     id: 4,
     descricao:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: sushi,
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    image: italiana,
     nota: '4.9',
-    infos: ['Destaque da semana', 'Japonesa'],
+    infos: ['Italiana'],
     link: './perfil',
-    titulo: 'Hioki Sushi'
+    titulo: 'La Dolce Vita Trattoria'
   },
   {
     id: 5,
     descricao:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: sushi,
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    image: italiana,
     nota: '4.9',
-    infos: ['Destaque da semana', 'Japonesa'],
+    infos: ['Italiana'],
     link: './perfil',
-    titulo: 'Hioki Sushi'
+    titulo: 'La Dolce Vita Trattoria'
   },
   {
     id: 6,
     descricao:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     image: italiana,
-    nota: '4.6',
+    nota: '4.9',
     infos: ['Italiana'],
     link: './perfil',
     titulo: 'La Dolce Vita Trattoria'
