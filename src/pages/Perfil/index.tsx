@@ -9,7 +9,7 @@ const opcpesDeRestautantes: OpcoesRestaurant[] = [
   {
     id: 1,
     descricao:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!sso delivery!',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     image: pizza,
     link: '',
     titulo: 'Pizza Marguerita'
@@ -33,7 +33,7 @@ const opcpesDeRestautantes: OpcoesRestaurant[] = [
   {
     id: 4,
     descricao:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!sso delivery!',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     image: pizza,
     link: '',
     titulo: 'Pizza Marguerita'
@@ -41,7 +41,7 @@ const opcpesDeRestautantes: OpcoesRestaurant[] = [
   {
     id: 5,
     descricao:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!sso delivery!',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
     image: pizza,
     link: '',
     titulo: 'Pizza Marguerita'
