@@ -14,7 +14,7 @@ const opcpesDeRestautantes: Restaurant[] = [
     image: sushi,
     nota: '4.9',
     infos: ['Destaque da semana', 'Japonesa'],
-    link: '',
+    link: './perfil',
     titulo: 'Hioki Sushi'
   },
   {
