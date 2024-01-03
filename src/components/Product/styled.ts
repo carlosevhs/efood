@@ -46,6 +46,7 @@ export const Descricao = styled.p`
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 8px;
+  text-align: justify;
 `
 export const Infos = styled.div`
   position: absolute;

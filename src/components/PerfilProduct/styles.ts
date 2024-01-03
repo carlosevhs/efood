@@ -31,6 +31,9 @@ export const Descricao = styled.p`
   display: block;
   margin-left: 8px;
   margin-top: 8px;
+  text-align: justify;
+  margin-right: 8px;
+
 `
 export const AdicionarAoCarrinho = styled.div`
   display: flex;
