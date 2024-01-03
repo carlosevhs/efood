@@ -24,6 +24,7 @@ export const TextosDaCapa = styled.div`
   justify-content: space-between;
   color: #fff;
   height: 100%;
+  font-size: 32px;
   p {
     margin-top: 24px;
     font-weight: 100;

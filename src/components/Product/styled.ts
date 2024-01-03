@@ -6,8 +6,11 @@ export const Card = styled.div`
   margin-bottom: 48px;
   position: relative;
 
-  img {
+  > img {
     margin-bottom: -6px;
+    width: 472px;
+    height: 217px;
+    object-fit: cover;
   }
 `
 export const Textos = styled.div`
