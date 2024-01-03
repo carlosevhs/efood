@@ -78,7 +78,7 @@ const PerfilProduct = ({ descricao, foto, nome, preco, porcao }: Prato) => {
             <DescricaoDoPrato>{descricao}</DescricaoDoPrato>
             <DescricaoDoPrato>Serve: {porcao}</DescricaoDoPrato>
             <AdicionarAoCarrinhoPreço>
-              Adiconar ao carrinho - {formataPreco(preco)}
+              Adicionar ao carrinho - {formataPreco(preco)}
             </AdicionarAoCarrinhoPreço>
           </div>
         </ModalContent>
