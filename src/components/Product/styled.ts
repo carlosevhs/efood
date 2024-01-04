@@ -8,7 +8,7 @@ export const Card = styled.div`
 
   > img {
     margin-bottom: -6px;
-    width: 472px;
+    width: 100%;
     height: 217px;
     object-fit: cover;
   }

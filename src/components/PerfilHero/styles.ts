@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -42,6 +42,15 @@ export const Container = styled.div`
   font-weight: 900;
   font-size: 18px;
 
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+  }
+
+  img {
+    @media (max-width: ${breakpoints.tablet}) {
+      margin: 20px 0;
+    }
+  }
   p {
     line-height: 21px;
     display: block;
@@ -50,5 +59,9 @@ export const Container = styled.div`
   a {
     text-decoration: none;
     color: ${cores.laranja};
+  }
+
+  div {
+    cursor: pointer;
   }
 `

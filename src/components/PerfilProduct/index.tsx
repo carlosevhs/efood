@@ -15,15 +15,33 @@ import {
 import fechar from '../../assets/images/fechar.png'
 
 import { Prato } from '../../pages/Home'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../store/reducers/cart'
 
 type ModalState = {
   isVisible: boolean
 }
+type Props = {
+  prato: Prato
+}
 
-const PerfilProduct = ({ descricao, foto, nome, preco, porcao }: Prato) => {
+export const formataPreco = (preco: number) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
+}
+const PerfilProduct = ({ prato }: Props) => {
+  const dispatch = useDispatch()
+
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
   })
+
+  const addToCart = () => {
+    dispatch(add(prato))
+    dispatch(open())
+  }
 
   const fecharModal = () => {
     setModal({
@@ -37,20 +55,13 @@ const PerfilProduct = ({ descricao, foto, nome, preco, porcao }: Prato) => {
     }
   }
 
-  const formataPreco = (preco: number) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
-  }
-
   return (
     <>
       <Card>
-        <img src={foto} alt={nome}></img>
+        <img src={prato.foto} alt={prato.nome}></img>
         <Textos>
-          <Titulo>{nome}</Titulo>
-          <Descricao>{getDescricao(descricao)}</Descricao>
+          <Titulo>{prato.nome}</Titulo>
+          <Descricao>{getDescricao(prato.descricao)}</Descricao>
           <Link to={``}>
             <AdicionarAoCarrinho
               onClick={() =>
@@ -66,7 +77,7 @@ const PerfilProduct = ({ descricao, foto, nome, preco, porcao }: Prato) => {
       </Card>
       <Modal className={modal.isVisible ? 'visivel' : ''}>
         <ModalContent className="container">
-          <img src={foto} alt="" />
+          <img src={prato.foto} alt="" />
           <div>
             <img
               onClick={() => fecharModal()}
@@ -74,11 +85,13 @@ const PerfilProduct = ({ descricao, foto, nome, preco, porcao }: Prato) => {
               src={fechar}
               alt=""
             />
-            <NomeDoPrato> {nome}</NomeDoPrato>
-            <DescricaoDoPrato>{descricao}</DescricaoDoPrato>
-            <DescricaoDoPrato>Serve: {porcao}</DescricaoDoPrato>
-            <AdicionarAoCarrinhoPreço>
-              Adicionar ao carrinho - {formataPreco(preco)}
+            <NomeDoPrato> {prato.nome}</NomeDoPrato>
+            <DescricaoDoPrato>{prato.descricao}</DescricaoDoPrato>
+            <DescricaoDoPrato>Serve: {prato.porcao}</DescricaoDoPrato>
+            <AdicionarAoCarrinhoPreço
+              onClick={() => (fecharModal(), addToCart())}
+            >
+              Adicionar ao carrinho - {formataPreco(prato.preco)}
             </AdicionarAoCarrinhoPreço>
           </div>
         </ModalContent>

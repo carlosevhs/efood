@@ -5,6 +5,10 @@ import { CapaDePerfil, Container, Imagem, TextosDaCapa } from './styles'
 import heroImg from '../../assets/images/Vector.svg'
 import logo from '../../assets/images/logo.svg'
 
+import { open } from '../../store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+
 type Props = {
   perfilRestaurante: {
     id: number
@@ -28,13 +32,22 @@ type Props = {
 }
 
 const PerfilHero = ({ perfilRestaurante }: Props) => {
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
   return (
     <>
       <Imagem style={{ backgroundImage: `url(${heroImg})` }}>
         <Container className="container">
           <Link to="/">Restaurantes</Link>
           <img src={logo} />
-          <p> 0 produto(s) no carrinho</p>
+          <div onClick={openCart}>
+            <p> {items.length} produto(s) no carrinho</p>
+          </div>
         </Container>
       </Imagem>
       <CapaDePerfil

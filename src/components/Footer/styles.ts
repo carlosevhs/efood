@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const FooterBar = styled.div`
   background-color: ${cores.bege};
@@ -12,6 +12,11 @@ export const FooterBar = styled.div`
   p {
     margin-top: 80px;
     margin-bottom: 40px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
   }
 `
 export const LogoImg = styled.img`

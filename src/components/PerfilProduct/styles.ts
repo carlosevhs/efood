@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Card = styled.div`
   background-color: ${cores.laranja};
   margin-bottom: 48px;
 
   img {
-    margin: 8px;
-    width: 304px;
+    padding: 8px;
+    width: 100%;
     height: 167px;
     object-fit: cover;
   }
@@ -69,6 +69,10 @@ export const Modal = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 90%;
+  }
+
   &.visivel {
     display: flex;
   }
@@ -93,11 +97,26 @@ export const ModalContent = styled.div`
   background-color: ${cores.laranja};
   color: ${cores.begeClaro};
 
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 90%;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 8px;
+    top: 15%;
+    display: block;
+  }
+
   > img {
     width: 280px;
     height: 280px;
     object-fit: cover;
     margin-right: 24px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 100%;
+      height: 150px;
+    }
   }
 
   .botao-fechar {
@@ -105,6 +124,10 @@ export const ModalContent = styled.div`
     top: 8px;
     right: 8px;
     cursor: pointer;
+    @media (max-width: ${breakpoints.tablet}) {
+      background-color: ${cores.laranja};
+      padding: 4px;
+    }
   }
 `
 export const NomeDoPrato = styled.h3`

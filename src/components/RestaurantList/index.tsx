@@ -1,10 +1,10 @@
 import { List } from './styles'
 
 import PerfilProduct from '../PerfilProduct'
-import { Prato } from '../../pages/Home'
+import { Restaurantes } from '../../pages/Home'
 
 export type Props = {
-  opcoesPratos: Prato[]
+  opcoesPratos: Restaurantes
 }
 
 const RestaurantList = ({ opcoesPratos }: Props) => {
@@ -12,16 +12,8 @@ const RestaurantList = ({ opcoesPratos }: Props) => {
     <>
       <div className="container">
         <List>
-          {opcoesPratos.map((prato) => (
-            <PerfilProduct
-              key={prato.id}
-              descricao={prato.descricao}
-              foto={prato.foto}
-              nome={prato.nome}
-              preco={prato.preco}
-              porcao={prato.porcao}
-              id={prato.id}
-            />
+          {opcoesPratos.cardapio.map((prato) => (
+            <PerfilProduct key={prato.id} prato={prato} />
           ))}
         </List>
       </div>
