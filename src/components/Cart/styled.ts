@@ -90,4 +90,32 @@ export const BotaoContinuarComAEntrega = styled.div`
   font-weight: 700;
   height: 24px;
   cursor: pointer;
+  margin-bottom: 8px;
+`
+export const Formulario = styled.div`
+  font-weight: bold;
+  color: ${cores.bege};
+  margin-bottom: 24px;
+  font-size: 14px;
+  h3 {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+`
+export const CepENumero = styled.div`
+  display: flex;
+  gap: 0 34px;
+`
+export const Inputs = styled.div`
+  margin-bottom: 8px;
+  input {
+    display: block;
+    width: 100%;
+    background-color: ${cores.bege};
+    border: 1px solid ${cores.bege};
+    margin-top: 8px;
+    height: 32px;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 14px;
 `

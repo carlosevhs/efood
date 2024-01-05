@@ -4,11 +4,13 @@ import { Prato } from '../../pages/Home'
 type CartState = {
   items: Prato[]
   isOpen: boolean
+  layout: string
 }
 
 const initialState: CartState = {
   items: [],
-  isOpen: false
+  isOpen: false,
+  layout: 'pagItems'
 }
 const cartSlice = createSlice({
   name: 'cart',
@@ -30,9 +32,34 @@ const cartSlice = createSlice({
     },
     close: (state) => {
       state.isOpen = false
+    },
+    moveToDelivery: (state) => {
+      if (state.items.length == 0) {
+        alert('Você precisa adicionar pelo menos um item ao carrinho')
+      } else {
+        state.layout = 'delivery'
+      }
+    },
+    moveToPay: (state) => {
+      state.layout = 'payment'
+    },
+    moveToConfirmation: (state) => {
+      state.layout = 'confirmation'
+    },
+    moveToPagItems: (state) => {
+      state.layout = 'pagItems'
     }
   }
 })
 
-export const { add, open, close, remove } = cartSlice.actions
+export const {
+  add,
+  open,
+  close,
+  remove,
+  moveToConfirmation,
+  moveToDelivery,
+  moveToPay,
+  moveToPagItems
+} = cartSlice.actions
 export default cartSlice.reducer

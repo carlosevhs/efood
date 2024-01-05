@@ -8,6 +8,7 @@ import logo from '../../assets/images/logo.svg'
 import { open } from '../../store/reducers/cart'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
+import { Overlay } from '../Cart/styled'
 
 type Props = {
   perfilRestaurante: {
@@ -39,6 +40,10 @@ const PerfilHero = ({ perfilRestaurante }: Props) => {
     dispatch(open())
   }
 
+  const tipoCapitalized =
+    perfilRestaurante.tipo.charAt(0).toUpperCase() +
+    perfilRestaurante.tipo.slice(1)
+
   return (
     <>
       <Imagem style={{ backgroundImage: `url(${heroImg})` }}>
@@ -56,8 +61,9 @@ const PerfilHero = ({ perfilRestaurante }: Props) => {
           backgroundSize: 'cover'
         }}
       >
+        <Overlay />
         <TextosDaCapa className="container">
-          <p>{perfilRestaurante.tipo}</p>
+          <p>{tipoCapitalized}</p>
           <h2>{perfilRestaurante.titulo}</h2>
         </TextosDaCapa>
       </CapaDePerfil>

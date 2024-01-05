@@ -37,6 +37,7 @@ const Product = ({
       return descricao.slice(0, 187) + '...'
     }
   }
+  const tipoCapitalized = tipo.charAt(0).toUpperCase() + tipo.slice(1)
 
   return (
     <Card>
@@ -45,7 +46,7 @@ const Product = ({
         <div style={{ display: destacado ? 'inline-block' : 'none' }}>
           <Tag size="small">Destade da semana</Tag>
         </div>
-        <Tag size="small">{tipo}</Tag>
+        <Tag size="small">{tipoCapitalized}</Tag>
       </Infos>
       <Textos>
         <CabecalhoCard>
