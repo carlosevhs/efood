@@ -1,14 +1,14 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-
-import { CapaDePerfil, Container, Imagem, TextosDaCapa } from './styles'
 
 import heroImg from '../../assets/images/Vector.svg'
 import logo from '../../assets/images/logo.svg'
 
 import { open } from '../../store/reducers/cart'
-import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { Overlay } from '../Cart/styled'
+
+import * as S from './styles'
 
 type Props = {
   perfilRestaurante: {
@@ -46,27 +46,27 @@ const PerfilHero = ({ perfilRestaurante }: Props) => {
 
   return (
     <>
-      <Imagem style={{ backgroundImage: `url(${heroImg})` }}>
-        <Container className="container">
+      <S.Imagem style={{ backgroundImage: `url(${heroImg})` }}>
+        <S.Container className="container">
           <Link to="/">Restaurantes</Link>
           <img src={logo} />
           <div onClick={openCart}>
             <p> {items.length} produto(s) no carrinho</p>
           </div>
-        </Container>
-      </Imagem>
-      <CapaDePerfil
+        </S.Container>
+      </S.Imagem>
+      <S.CapaDePerfil
         style={{
           backgroundImage: `url(${perfilRestaurante.capa})`,
           backgroundSize: 'cover'
         }}
       >
         <Overlay />
-        <TextosDaCapa className="container">
+        <S.TextosDaCapa className="container">
           <p>{tipoCapitalized}</p>
           <h2>{perfilRestaurante.titulo}</h2>
-        </TextosDaCapa>
-      </CapaDePerfil>
+        </S.TextosDaCapa>
+      </S.CapaDePerfil>
     </>
   )
 }

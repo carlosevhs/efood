@@ -1,7 +1,7 @@
-import { List } from './styles'
-
 import PerfilProduct from '../PerfilProduct'
 import { Restaurantes } from '../../pages/Home'
+
+import { List } from './styles'
 
 export type Props = {
   opcoesPratos: Restaurantes

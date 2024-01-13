@@ -22,8 +22,33 @@ export const CartContainer = styled.div`
   &.is-open {
     display: flex;
   }
+
+  form {
+    position: relative;
+    background-color: ${cores.laranja};
+    padding: 32px 8px;
+    max-width: 360px;
+    width: 100%;
+    z-index: 1;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      max-width: 230px;
+    }
+  }
 `
-export const Sidebar = styled.aside`
+export const Mensagem = styled.div<{ display: string }>`
+  display: ${(props) => props.display};
+`
+export const MensageError = styled.p`
+  font-weight: bold;
+  color: ${cores.bege};
+  margin-bottom: 8px;
+  font-size: 14px;
+  text-align: center;
+`
+export const SidebarItems = styled.aside<{ display: string }>`
+  display: ${(props) => props.display};
+  position: relative;
   background-color: ${cores.laranja};
   padding: 32px 8px;
   max-width: 360px;
@@ -34,6 +59,48 @@ export const Sidebar = styled.aside`
     max-width: 230px;
   }
 `
+
+export const SidebarDelivery = styled.aside<{ display: string }>`
+  display: ${(props) => props.display};
+  position: relative;
+  background-color: ${cores.laranja};
+  padding: 32px 8px;
+  max-width: 360px;
+  width: 100%;
+  z-index: 1;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 230px;
+  }
+`
+
+export const SidebarPayment = styled.aside<{ display: string }>`
+  display: ${(props) => props.display};
+  position: relative;
+  background-color: ${cores.laranja};
+  padding: 32px 8px;
+  max-width: 360px;
+  width: 100%;
+  z-index: 1;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 230px;
+  }
+`
+export const Sidebar = styled.aside<{ display: string }>`
+  display: ${(props) => props.display};
+  position: relative;
+  background-color: ${cores.laranja};
+  padding: 32px 8px;
+  max-width: 360px;
+  width: 100%;
+  z-index: 1;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 230px;
+  }
+`
+
 export const ItensNoCarrinhos = styled.ul`
   li {
     position: relative;
@@ -91,7 +158,25 @@ export const BotaoContinuarComAEntrega = styled.div`
   height: 24px;
   cursor: pointer;
   margin-bottom: 8px;
+  border: none;
+  width: 100%;
 `
+export const BotaoFinalizarCompra = styled.button`
+  display: flex;
+  background-color: ${cores.bege};
+  color: ${cores.laranja};
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  height: 24px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  border: none;
+  width: 100%;
+`
+
 export const Formulario = styled.div`
   font-weight: bold;
   color: ${cores.bege};
@@ -104,10 +189,16 @@ export const Formulario = styled.div`
 `
 export const CepENumero = styled.div`
   display: flex;
-  gap: 0 34px;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0 30px;
+  @media (max-width: ${breakpoints.tablet}) {
+    display: block;
+  }
 `
 export const Inputs = styled.div`
   margin-bottom: 8px;
+  width: 100%;
   input {
     display: block;
     width: 100%;
@@ -118,4 +209,30 @@ export const Inputs = styled.div`
     padding: 8px;
     font-weight: bold;
     font-size: 14px;
+    &.error {
+      border: 5px solid red;
+    }
+  }
+  &.cvv {
+    max-width: 86px;
+  }
+  #expiryYear,
+  #expiryMounth {
+    @media (max-width: ${breakpoints.tablet}) {
+      max-width: 86px;
+    }
+  }
+`
+export const FinalizacaoDoPedido = styled.div`
+  color: ${cores.bege};
+  h3 {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
 `

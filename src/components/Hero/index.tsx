@@ -1,11 +1,13 @@
-import { Imagem } from './style'
-
 import heroImg from '../../assets/images/Vector.svg'
 import logo from '../../assets/images/logo.svg'
 
+import { Imagem } from './style'
+
 const Hero = () => (
   <Imagem style={{ backgroundImage: `url(${heroImg})` }}>
-    <img src={logo} />
+    <h1>
+      <img src={logo} alt="efood" />
+    </h1>
     <h2>
       Viva experiências gastronômicas <br />
       no conforto da sua casa

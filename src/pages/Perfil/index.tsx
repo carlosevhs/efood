@@ -7,7 +7,7 @@ import { useGetPerfilQuery } from '../../services/api'
 
 const Perfil = () => {
   const { id } = useParams()
-  const { data: restaurante } = useGetPerfilQuery(id!)
+  const { data: restaurante } = useGetPerfilQuery(id || '')
 
   if (!restaurante) {
     return <div>Carregando...</div>

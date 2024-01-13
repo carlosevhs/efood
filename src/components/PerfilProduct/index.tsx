@@ -1,22 +1,13 @@
+import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import {
-  Card,
-  Descricao,
-  Titulo,
-  Textos,
-  AdicionarAoCarrinho,
-  Modal,
-  ModalContent,
-  NomeDoPrato,
-  DescricaoDoPrato,
-  AdicionarAoCarrinhoPreço
-} from './styles'
+
 import fechar from '../../assets/images/fechar.png'
 
 import { Prato } from '../../pages/Home'
-import { useDispatch } from 'react-redux'
 import { add, open } from '../../store/reducers/cart'
+
+import * as S from './styles'
 
 type ModalState = {
   isVisible: boolean
@@ -57,13 +48,13 @@ const PerfilProduct = ({ prato }: Props) => {
 
   return (
     <>
-      <Card>
+      <S.Card>
         <img src={prato.foto} alt={prato.nome}></img>
-        <Textos>
-          <Titulo>{prato.nome}</Titulo>
-          <Descricao>{getDescricao(prato.descricao)}</Descricao>
+        <S.Textos>
+          <S.Titulo>{prato.nome}</S.Titulo>
+          <S.Descricao>{getDescricao(prato.descricao)}</S.Descricao>
           <Link to={``}>
-            <AdicionarAoCarrinho
+            <S.AdicionarAoCarrinho
               onClick={() =>
                 setModal({
                   isVisible: true
@@ -71,12 +62,12 @@ const PerfilProduct = ({ prato }: Props) => {
               }
             >
               Adicionar ao carrinho
-            </AdicionarAoCarrinho>
+            </S.AdicionarAoCarrinho>
           </Link>
-        </Textos>
-      </Card>
-      <Modal className={modal.isVisible ? 'visivel' : ''}>
-        <ModalContent className="container">
+        </S.Textos>
+      </S.Card>
+      <S.Modal className={modal.isVisible ? 'visivel' : ''}>
+        <S.ModalContent className="container">
           <img src={prato.foto} alt="" />
           <div>
             <img
@@ -85,18 +76,18 @@ const PerfilProduct = ({ prato }: Props) => {
               src={fechar}
               alt=""
             />
-            <NomeDoPrato> {prato.nome}</NomeDoPrato>
-            <DescricaoDoPrato>{prato.descricao}</DescricaoDoPrato>
-            <DescricaoDoPrato>Serve: {prato.porcao}</DescricaoDoPrato>
-            <AdicionarAoCarrinhoPreço
+            <S.NomeDoPrato> {prato.nome}</S.NomeDoPrato>
+            <S.DescricaoDoPrato>{prato.descricao}</S.DescricaoDoPrato>
+            <S.DescricaoDoPrato>Serve: {prato.porcao}</S.DescricaoDoPrato>
+            <S.AdicionarAoCarrinhoPreço
               onClick={() => (fecharModal(), addToCart())}
             >
               Adicionar ao carrinho - {formataPreco(prato.preco)}
-            </AdicionarAoCarrinhoPreço>
+            </S.AdicionarAoCarrinhoPreço>
           </div>
-        </ModalContent>
+        </S.ModalContent>
         <div onClick={() => fecharModal()} className="overlay"></div>
-      </Modal>
+      </S.Modal>
     </>
   )
 }

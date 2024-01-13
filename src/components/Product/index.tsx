@@ -1,17 +1,10 @@
 import { Link } from 'react-router-dom'
 
 import Tag from '../Tag'
-import {
-  Card,
-  Descricao,
-  Titulo,
-  Textos,
-  Avaliacao,
-  CabecalhoCard,
-  Infos
-} from './styled'
 
 import estrela from '../../assets/images/estrela.svg'
+
+import * as S from './styled'
 
 type Props = {
   titulo: string
@@ -40,28 +33,29 @@ const Product = ({
   const tipoCapitalized = tipo.charAt(0).toUpperCase() + tipo.slice(1)
 
   return (
-    <Card>
+    <S.Card>
       <img src={imagem} alt={titulo}></img>
-      <Infos>
+      <S.Infos>
         <div style={{ display: destacado ? 'inline-block' : 'none' }}>
           <Tag size="small">Destade da semana</Tag>
         </div>
         <Tag size="small">{tipoCapitalized}</Tag>
-      </Infos>
-      <Textos>
-        <CabecalhoCard>
-          <Titulo>{titulo}</Titulo>
-          <Avaliacao>
+      </S.Infos>
+      <S.Textos>
+        <S.CabecalhoCard>
+          <S.Titulo>{titulo}</S.Titulo>
+          <S.Avaliacao>
             <h3>{nota}</h3>
+
             <img src={estrela} />
-          </Avaliacao>
-        </CabecalhoCard>
-        <Descricao>{getDescricao(descricao)}</Descricao>
+          </S.Avaliacao>
+        </S.CabecalhoCard>
+        <S.Descricao>{getDescricao(descricao)}</S.Descricao>
         <Link to={`/perfil/${id}`}>
           <Tag size="big">Saiba mais</Tag>
         </Link>
-      </Textos>
-    </Card>
+      </S.Textos>
+    </S.Card>
   )
 }
 

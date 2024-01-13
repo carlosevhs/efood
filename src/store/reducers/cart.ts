@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 import { Prato } from '../../pages/Home'
 
 type CartState = {
@@ -33,33 +34,11 @@ const cartSlice = createSlice({
     close: (state) => {
       state.isOpen = false
     },
-    moveToDelivery: (state) => {
-      if (state.items.length == 0) {
-        alert('Você precisa adicionar pelo menos um item ao carrinho')
-      } else {
-        state.layout = 'delivery'
-      }
-    },
-    moveToPay: (state) => {
-      state.layout = 'payment'
-    },
-    moveToConfirmation: (state) => {
-      state.layout = 'confirmation'
-    },
-    moveToPagItems: (state) => {
-      state.layout = 'pagItems'
+    cleanCart: (state) => {
+      state.items = []
     }
   }
 })
 
-export const {
-  add,
-  open,
-  close,
-  remove,
-  moveToConfirmation,
-  moveToDelivery,
-  moveToPay,
-  moveToPagItems
-} = cartSlice.actions
+export const { add, open, close, remove, cleanCart } = cartSlice.actions
 export default cartSlice.reducer

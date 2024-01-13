@@ -31,13 +31,14 @@ export const TextosDaCapa = styled.div`
   color: #fff;
   height: 100%;
   font-size: 32px;
+  position: relative;
+  z-index: 0.9;
+
   p {
-    z-index: 1;
     margin-top: 24px;
     font-weight: 100;
   }
   h2 {
-    z-index: 1;
     margin-bottom: 32px;
     font-weight: 900;
   }
